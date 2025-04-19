@@ -1,34 +1,101 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
   }
   
   header {
-    background-color: #003366;
+    background-color: #002147; /* azul UNRC */
     color: white;
     padding: 1rem;
   }
   
   nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
     gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
   
+  nav li {
+    margin: 0;
+  }
+
   nav a {
-    color: white;
     text-decoration: none;
+    color: white;
+    font-weight: bold;
   }
   
+  nav a:hover {
+    text-decoration: underline;
+  }
+
   main {
     padding: 2rem;
   }
   
   footer {
-    background-color: #f0f0f0;
-    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
     padding: 1rem;
+    text-align: center;
   }
   
+  /* Contenedor para los docentes */
+.grid-docentes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 4 columnas */
+  gap: 1.5rem;  /* Espacio entre columnas y filas */
+  justify-items: center;  /* Centra los elementos dentro de cada celda */
+  margin-top: 2rem;
+}
+
+/* Estilo de cada docente */
+.docente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-docente {
+  width: 75px;       /* Fuerza el ancho */
+  height: 75px;      /* Fuerza el alto */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.informacion-docente h3 {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.informacion-docente p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.informacion-docente a {
+  color: #002147; /* azul institucional */
+  text-decoration: none;
+}
+
+.informacion-docente a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .grid-docentes {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-docentes {
+    grid-template-columns: 1fr;  /* 1 columna en pantallas muy pequeñas */
+  }
+}
